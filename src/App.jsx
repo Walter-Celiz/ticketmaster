@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navbar } from "./components/Navbar";
 import { Events } from "./components/Events";
+import { SingupForm } from "./components/SingupForm";
 import "./App.css";
 
 function App() {
@@ -12,8 +13,9 @@ function App() {
 
   return (
     <>
-      <Navbar onSearch={handleNavbarSearch} />
-      <Events searchTerm={searchTerm} />
+      {/* <Navbar onSearch={handleNavbarSearch} />
+      <Events searchTerm={searchTerm} /> */}
+      <SingupForm />
     </>
   );
 }
