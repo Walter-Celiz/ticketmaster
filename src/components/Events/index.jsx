@@ -7,8 +7,8 @@ export const Events = ({ searchTerm }) => {
     _embedded: { events },
   } = data;
 
-  const handleEventItemClick = (_id) => {
-    // console.log("evento clickeado: ", id);
+  const handleEventItemClick = (id) => {
+    console.log("evento clickeado: ", id);
   };
 
   const renderEvents = () => {
