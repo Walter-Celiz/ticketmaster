@@ -6,7 +6,7 @@ export const EventItem = ({ info, id, name, image, onEventClick }) => {
   };
 
   return (
-    <div onClick={() => console.log("Padre clickeado")}>
+    <div /* onClick={() => console.log("Padre clickeado")} */>
       <img src={image} alt={name} width={200} height={200} />
       <h4>{name}</h4>
       <p>{info}</p>

@@ -1,8 +1,13 @@
 /* eslint-disable react/prop-types */
+import { useEffect } from "react";
 import { useState } from "react";
 
 export const Navbar = ({ onSearch }) => {
   const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    // console.log("1010 effect");
+  }, [search, onSearch])
 
   const handleInputChange = (e) => {
     setSearch(e.target.value);

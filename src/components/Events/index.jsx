@@ -1,14 +1,12 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { EventItem } from "./components/EventItem";
-import data from "../../data/events.json";
+import useEventData from "../../hooks/useEventData";
 
 export const Events = ({ searchTerm }) => {
-  const {
-    _embedded: { events },
-  } = data;
-
+  const { events, isLoading, error } = useEventData();
   const handleEventItemClick = (id) => {
-    console.log("evento clickeado: ", id);
+    // console.log("evento clickeado: ", id);
   };
 
   const renderEvents = () => {
@@ -16,7 +14,7 @@ export const Events = ({ searchTerm }) => {
 
     if (searchTerm.length > 0) {
       eventsFiltered = eventsFiltered.filter((item) =>
-        item.name.toLocaleLowerCase().includes(searchTerm),
+        item.name.toLocaleLowerCase().includes(searchTerm)
       );
     }
 
@@ -31,6 +29,14 @@ export const Events = ({ searchTerm }) => {
       />
     ));
   };
+
+  if (error) {
+    return <div>Ha ocurrido un error</div>;
+  }
+
+  if (isLoading) {
+    return <div>Cargando resultados...</div>;
+  }
 
   return (
     <>

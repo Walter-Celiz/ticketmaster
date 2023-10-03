@@ -1,23 +1,17 @@
 import { useState } from "react";
-import { Navbar } from "./components/Navbar";
-import { Events } from "./components/Events";
-import { SingupForm } from "./components/SingupForm";
+import { Navbar, Events } from "./components";
 import "./App.css";
 
-function App() {
+export function App() {
   const [searchTerm, setSearchTerm] = useState("");
-
   const handleNavbarSearch = (term) => {
     setSearchTerm(term);
   };
 
   return (
     <>
-      {/* <Navbar onSearch={handleNavbarSearch} />
-      <Events searchTerm={searchTerm} /> */}
-      <SingupForm />
+      <Navbar onSearch={handleNavbarSearch} />
+      <Events searchTerm={searchTerm} />
     </>
   );
 }
-
-export default App;

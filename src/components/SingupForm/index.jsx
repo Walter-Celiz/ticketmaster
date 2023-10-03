@@ -1,64 +1,49 @@
-import { useState } from "react";
+/* eslint-disable no-unused-vars */
+import { useForm } from "react-hook-form";
 
 export const SingupForm = () => {
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
-  const [address, setAddress] = useState("");
-  const [zipcode, setZipcode] = useState("");
-  const [phone, setPhone] = useState("");
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
   const handleClearClick = () => {
-    setName("");
-    setAge("");
-    setAddress("");
-    setZipcode("");
-    setPhone("");
+    reset();
   };
 
-  const handleSubmitForm = (e) => {
-    e.preventDefault();
-    console.log("submit: ", {
-      name,
-      age,
-      address,
-      zipcode,
-      phone,
-    });
+  const handleSubmitForm = (data) => {
+    console.log(data);
   };
+
+  // console.log(errors);
 
   return (
-    <form onSubmit={handleSubmitForm}>
+    <form onSubmit={handleSubmit(handleSubmitForm)}>
       <label>
         Name
-        <input value={name} onChange={(e) => setName(e.target.value)} required />
+        <input {...register("name", { required: true })} />
       </label>
       <br />
       <label>
         Age
-        <input value={age} onChange={(e) => setAge(e.target.value)} required />
+        <input {...register("age", { required: true })} required />
       </label>
       <br />
       <label>
         Address
-        <input
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          required
-        />
+        <input {...register("address", { required: true })} required />
       </label>
       <br />
       <label>
         Zipcode
-        <input
-          value={zipcode}
-          onChange={(e) => setZipcode(e.target.value)}
-          required
-        />
+        <input {...register("zipcode", { required: true })} required />
       </label>
       <br />
       <label>
         Phone
-        <input value={phone} onChange={(e) => setPhone(e.target.value)} required />
+        <input {...register("phone", { required: true })} required />
       </label>
       <br />
       <div>
