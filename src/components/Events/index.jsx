@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { EventItem } from "./components/EventItem";
 import useEventData from "../../hooks/useEventData";
+import { EventItem } from './components/EventItem/index';
 
 export const Events = ({ searchTerm }) => {
   const { events, isLoading, error } = useEventData();
