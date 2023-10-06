@@ -14,7 +14,7 @@ const useEventsData = () => {
       } catch (error) {
         setError(error);
       }
-    }, 4000);
+    }, 1000);
     // Load API Call
   }, []);
 
