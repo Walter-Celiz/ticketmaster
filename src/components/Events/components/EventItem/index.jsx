@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+// import { Link } from "react-router-dom";
 import styles from "./EventItem.module.css";
 
 export const EventItem = ({ info, id, name, image, onEventClick }) => {
@@ -25,6 +26,7 @@ export const EventItem = ({ info, id, name, image, onEventClick }) => {
           className={styles.seeMoreBtn}
           onClick={handleSeeMoreClick}
         >
+          {/* <Link to={`/detail/${id}`}>Ver mas</Link> */}
           Ver mas
         </button>
       </div>
